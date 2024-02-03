@@ -4,7 +4,9 @@
   "description": "React Learning",
   "main": "App.js",
   "scripts": {
-    "test": "jester"
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"    
   },
   "author": "Siddhant",
   "license": "ISC",
@@ -15,5 +17,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "browserslist" : [
+    "last 5 versions"
+  ]
 }
