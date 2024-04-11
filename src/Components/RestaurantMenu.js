@@ -17,16 +17,17 @@ const RestaurantMenu = () => {
     const data = await fetch(MENU_API + resId);
 
     const json = await data.json();
+    console.log("object", json);
     setResInfo(json.data);
   };
 
   if (resInfo === null) return <Shimmer />;
 
   const { name, cuisines, costForTwoMessage } =
-    resInfo?.cards[0]?.card?.card?.info;
+    resInfo?.cards[2]?.card?.card?.info;
 
   const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
   console.log("itemcards", itemCards);
 
   return (
