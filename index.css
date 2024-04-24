@@ -73,3 +73,13 @@
 .filter-container {
     display: flex;
 }
+
+.link {
+    text-decoration: none; 
+    color: black; 
+  }
+
+.user-class {
+    border: 2px solid black;
+    padding: 5px 20px;
+}
