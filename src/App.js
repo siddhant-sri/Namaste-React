@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 
 import Header from "../src/Components/Header";
@@ -9,13 +9,27 @@ import Error from "./Components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "./Components/Contact";
 import RestaurantMenu from "./Components/RestaurantMenu";
+import UserContext from "./utils/UserContext";
 
 const AppLayout = () => {
+  const [userName, setUserName] = useState();
+
+  // let's say for auth we will get user data
+  useEffect(() => {
+    // Make an API call and send username and password
+    const data = {
+      name: "Siddhant Srivastava",
+    };
+    setUserName(data.name);
+  }, []);
+
   return (
-    <div className="app">
-      <Header />
-      <Outlet />
-    </div>
+    <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
+      <div className="app">
+        <Header />
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
